@@ -33,3 +33,25 @@
 
 
 import './styles/style.css'
+
+
+import refs from "./js/refs.js";
+
+// function submitHandler(e) {
+//     e.preventDefault();
+//     const value = refs.input.value;
+// console.log(value)}
+import {submitHandler} from './js/handlers.js';
+import questionsTemplate from './partials/arr.hbs';
+import {arrayName} from "./data/serverData.js";
+
+const markup = questionsTemplate(arrayName);
+
+refs.root.insertAdjacentHTML("beforeend", markup);
+refs.form.addEventListener("submit",submitHandler )
+
+
+// задача 6  зберігаємо дані у localeStorage
+
+// const storageCollection = JSON.parse(localStorage.getItem("list"));
+// console.log(storageCollection);
